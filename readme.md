@@ -561,13 +561,13 @@ function test(){
   let firstName = ref('zhang')
   let lastName = ref('san')
 
-  // 计算属性——只读取，不修改
+  // 计算属性——只读取，不修改 FullName
   /* let fullName = computed(()=>{
     return firstName.value + '-' + lastName.value
   }) */
 
 
-  // 计算属性——既读取又修改
+  // 计算属性——既读取又修改,这里的修改是修改FullName
   let fullName = computed({
     // 读取
     get(){
@@ -736,7 +736,7 @@ function test(){
 2. 若该属性值是**依然**是【对象类型】，可直接编，也可写成函数，建议写成函数。
 
 结论：监视的要是对象里的属性，那么最好写函数式，注意点：若是对象监视的是地址值，需要关注对象内部，需要手动开启深度监视。
-
+函数的返回除了基本对象一般都是返回的地址，如果要监听的需要开启深度监听
 ```vue
 <template>
   <div class="person">
@@ -787,6 +787,7 @@ function test(){
   }) */
 
   // 监视，情况四：监视响应式对象中的某个属性，且该属性是对象类型的，可以直接写，也能写函数，更推荐写函数
+  // person.car 这个就是一个地址，需要开启深度监听
   watch(()=>person.car,(newValue,oldValue)=>{
     console.log('person.car变化了',newValue,oldValue)
   },{deep:true})
