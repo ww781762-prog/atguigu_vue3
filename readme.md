@@ -1047,7 +1047,7 @@ function test(){
 >   
 > <script lang="ts" setup name="Person">
 > import {defineProps} from 'vue'
-> import {type PersonInter} from '@/types'
+> import {type Persons} from '@/types'
 >   
 >   // 第一种写法：仅接收
 > // const props = defineProps(['list'])
