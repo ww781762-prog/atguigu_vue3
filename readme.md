@@ -540,6 +540,20 @@ function test(){
   }
 </script>
 ```
+```vue
+//  Vue 在 reactive() 内部做了“ref 自动解包”
+let obj = reactive({
+    a:1,
+    b:2,
+    c:ref(3)
+})
+let x = ref(9)
+console.log(obj.a)
+console.log(obj.b)
+console.log(obj.c)
+
+
+```
 ## 3.8. 【computed】
 
 作用：根据已有数据计算出新数据（和`Vue2`中的`computed`作用一致）。
