@@ -2563,7 +2563,7 @@ export default function(initValue:string,delay:number){
 
 ## 8.1. 【Teleport】
 
-- 什么是Teleport？—— Teleport 是一种能够将我们的**组件html结构**移动到指定位置的技术。
+- 什么是Teleport？—— Teleport 是一种能够将我们的**组件html结构**移动到指定位置的技术。比如如果图片设置了饱和度，就会导致其他标签的定位失效
 
 ```html
 <teleport to='body' >
